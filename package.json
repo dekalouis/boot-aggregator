@@ -9,9 +9,12 @@
   "main": "index.js",
   "dependencies": {
     "esbuild": "^0.28.2",
+    "fs": "^0.0.1-security",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
     "undici-types": "^8.9.0"
   },
-  "type": "module", 
+  "type": "module",
   "scripts": {
     "start": "tsx ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
