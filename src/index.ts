@@ -1,7 +1,8 @@
 import { CommandsRegistry, registerCommand, runCommand } from "./commands/commands";
-import { handlerLogin } from "./commands/users";
+import { handlerReset } from "./commands/reset";
+import { handlerLogin, handlerRegister, handlerUsers } from "./commands/users";
 
-function main() {
+async function main(): Promise<void> {
   const args = process.argv.slice(2);
 
   if (args.length === 0) {
@@ -12,10 +13,13 @@ function main() {
   const cmdArgs = args.slice(1);
   const registry: CommandsRegistry = {}
 
-  registerCommand(registry, "login", handlerLogin)
+  registerCommand(registry, "login", handlerLogin);
+  registerCommand(registry, "register", handlerRegister);
+  registerCommand(registry, "reset", handlerReset);
+  registerCommand(registry, "users", handlerUsers);
 
   try {
-    runCommand(registry, cmdName, ...cmdArgs);
+    await runCommand(registry, cmdName, ...cmdArgs);
   } catch (err) {
     if (err instanceof Error) {
       console.error(`Error running command ${cmdName}: ${err.message}`);
@@ -24,6 +28,7 @@ function main() {
     }
     process.exit(1);
   }
+  process.exit(0);
 }
 
 main();
