@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@types/node": "^26.6.4",
+    "drizzle-kit": "^0.31.11",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
@@ -8,15 +9,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "drizzle-orm": "^0.45.4",
     "esbuild": "^0.28.2",
     "fs": "^0.0.1-security",
     "os": "^0.1.2",
     "path": "^0.12.7",
+    "postgres": "^3.4.9",
     "undici-types": "^8.9.0"
   },
   "type": "module",
   "scripts": {
     "start": "tsx ./src/index.ts",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
