@@ -15,6 +15,20 @@
       "when": 1791654178254,
       "tag": "0001_sad_vermin",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791699170616,
+      "tag": "0002_clammy_sheva_callister",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791704813418,
+      "tag": "0003_lively_mesmero",
+      "breakpoints": true
     }
   ]
 }
